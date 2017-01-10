@@ -16,7 +16,7 @@ def user_chooses(filename):
 
 
 def create_dictionary(filename):
-    """print list without input"""
+    """creates a dictionary from file"""
 
     open_file = open(filename)
 
@@ -36,7 +36,7 @@ def create_dictionary(filename):
 def rating_restaurants(filename):
     """Sorts rated restaurants in alphabetical order"""
 
-    open_file = open(filename)
+   # open_file = open(filename)
 
     restaurant_ratings = {}
     restaurant_name = raw_input("What's the restaurant's name?")
@@ -49,17 +49,12 @@ def rating_restaurants(filename):
 
     restaurant_ratings[restaurant_name] = restaurant_score
 
-    list_with_inputs = create_dictionary(filename) 
-    sorted(list_with_inputs)
+    create_dictionary(filename) 
 
-   
+    for restaurant, rating in sorted(restaurant_ratings.items()):
+            print "%s is rated %s" % (restaurant, rating)
 
-    # for restaurant, rating in sorted(restaurant_ratings.items()):
-    #         print "%s is rated %s" % (restaurant, rating)
-
-
-
-    open_file.close()
+#    open_file.close()
 
 #rating_restaurants("scores.txt")
 user_chooses("scores.txt")        
