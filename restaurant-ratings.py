@@ -1,10 +1,10 @@
 def user_chooses(filename):
     """Asks a user what they want to do """
 
-    print "What would you like to do? \
-            1. See all the ratings in alphabetical order. \
-            2. Add a new resturant and rating. \
-            3. Quit."
+    print """What would you like to do? 
+            1. See all the ratings in alphabetical order. 
+            2. Add a new resturant and rating. 
+            3. Quit."""
 
     user_choice = raw_input("Select 1, 2, or 3: ")
     if user_choice == "1":
