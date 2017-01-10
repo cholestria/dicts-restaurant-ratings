@@ -1,5 +1,5 @@
 def create_dictionary():
-    """Creates a dictionary of restauants and scores"""
+    """Creates a dictionary of restauants and scores."""
 
     open_file = open("scores.txt")
 
