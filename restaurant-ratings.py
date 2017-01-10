@@ -7,8 +7,8 @@ def rating_restaurants(filename):
 
     for line in open_file:
         line = line.rstrip()
-        line = line.split(':')
-        restaurant_ratings[line[0]] = line[1]
+        restaurant, rating = line.split(':')
+        restaurant_ratings[restaurant] = rating
 
     for restaurant, rating in sorted(restaurant_ratings.items()):
             print "%s is rated %s" % (restaurant, rating)
