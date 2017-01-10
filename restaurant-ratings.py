@@ -8,14 +8,14 @@ def user_chooses(filename):
 
     user_choice = raw_input("Select 1, 2, or 3: ")
     if user_choice == "1":
-        just_print(filename)
+        create_dictionary(filename)
     elif user_choice == "2":
         rating_restaurants(filename)
     else:
         exit()
 
 
-def just_print(filename):
+def create_dictionary(filename):
     """print list without input"""
 
     open_file = open(filename)
@@ -39,16 +39,19 @@ def rating_restaurants(filename):
     open_file = open(filename)
 
     restaurant_ratings = {}
+    if user_choice == "2":
+        restaurant_name = raw_input("What's the restaurant's name?")
+        restaurant_score = int(raw_input("What's the restaurant's score?"))
 
-    restaurant_name = raw_input("What's the restaurant's name?")
-    restaurant_score = int(raw_input("What's the restaurant's score?"))
-
-    for line in open_file:
+    else:
+        for line in open_file:
         line = line.rstrip()
         restaurant, rating = line.split(':')
         restaurant_ratings[restaurant] = rating
 
-    restaurant_ratings[restaurant_name] = restaurant_score    
+    restaurant_ratings[restaurant_name] = restaurant_score
+
+    create_dictionary(filename)
 
     for restaurant, rating in sorted(restaurant_ratings.items()):
             print "%s is rated %s" % (restaurant, rating)
